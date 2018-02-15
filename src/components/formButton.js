@@ -1,16 +1,28 @@
+import React from 'react';
+
+// let props={
+//     className: 'note__control',
+//     type: 'button',
+//     onClick: ()=>{
+
+//     }
+// }
+
 // props param
-function FormButton(props) {
-    let formButton = document.createElement('button');
+// function FormButton(props, children) {
+
+//     return React.createElement('button', props, children)
+    // let formButton = document.createElement('button');
     
-    // destructuring
-    formButton.setAttribute('class', props.className);
-    formButton.setAttribute('type', props.type);
+    // // destructuring
+    // formButton.setAttribute('class', props.className);
+    // formButton.setAttribute('type', props.type);
     
-    formButton.addEventListener('click', props.click);
+    // formButton.addEventListener('click', props.click);
 
-    formButton.innerHTML = props.children;
+    // formButton.innerHTML = props.children;
 
-    return formButton;
-}
+    // return formButton;
+// }
 
-export default FormButton;
+export default (props) => React.createElement('button', props)
