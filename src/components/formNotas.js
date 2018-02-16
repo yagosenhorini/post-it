@@ -73,7 +73,7 @@ function FormNotas({ notaAtual, posicao, adicionarNota, removerNota, editarFormu
     let formNotas;
     let inputTitulo = criaInput(novaNota);
     let textareaTexto = criaTextarea(novaNota);
-    let props = { className: 'note' };
+    let formProps = { className: 'note' };
     let children;
 
     if (novaNota.editando) {
@@ -84,7 +84,7 @@ function FormNotas({ notaAtual, posicao, adicionarNota, removerNota, editarFormu
     } else {
         children = [inputTitulo, textareaTexto];
 
-        props.onClick = () =>  editarFormulario(posicao);
+        formProps.onClick = () =>  editarFormulario(posicao);
     }
 
     return React.createElement(Form, formProps, children);
