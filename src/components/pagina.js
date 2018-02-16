@@ -4,24 +4,6 @@ import FormNotas from './formNotas'
 import Nota from '../nota';
 import ListaNotas from '../listaNotas'
 
-const listaNotas = new ListaNotas();
-
-const editarFormulario = posicao => listaNotas.edita(posicao);
-
-const adicionarNota = (inputTitulo, textareaTexto, formulario, posicao) => {
-    if (listaNotas.pega(posicao)) {
-        listaNotas.salva(posicao, inputTitulo.value, textareaTexto.value);
-    } else {
-        listaNotas.adiciona(inputTitulo.value, textareaTexto.value);
-        formulario.reset();
-    }
-}
-
-const removerNota = (evento, posicao) => {
-    evento.stopPropagation();
-    listaNotas.remove(posicao);
-}
-
 function criaFormNotas() {
     const props = {
         notaAtual: new Nota('', ''),
@@ -58,6 +40,22 @@ class Pagina extends React.Component {
         listaNotas: novaLista
     })    
     }
+
+    editarFormulario(posicao){listaNotas.edita(posicao)};
+
+adicionarNota(inputTitulo, textareaTexto, formulario, posicao) {
+    if (listaNotas.pega(posicao)) {
+        listaNotas.salva(posicao, inputTitulo.value, textareaTexto.value);
+    } else {
+        listaNotas.adiciona(inputTitulo.value, textareaTexto.value);
+        formulario.reset();
+    }
+}
+
+removerNota(evento, posicao){
+    evento.stopPropagation();
+    listaNotas.remove(posicao);
+}
 
     render() {
         const props = { className: 'container' };
