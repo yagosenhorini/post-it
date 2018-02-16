@@ -49,7 +49,4 @@ function Pagina({ SecaoNotas, FormNotas }) {
     let secaoNotas = criaSecaoNotas();
     const children = [formNotas, secaoNotas];
     return React.createElement('main', props, children)
-
-    secao = SecaoNotas(posicao, notaAtual, editarFormulario, adicionarNota, removerNota);
-    formulario = FormNotas(notaAtual, posicao, adicionarNota, removerNota, editarFormulario);
 } export default Pagina;
