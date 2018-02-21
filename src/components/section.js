@@ -1,2 +1,4 @@
-import React from 'react';
-export default (props, children) => React.createElement('section', props, children);
+import React from 'react'
+
+
+export default props => <section {...props} />

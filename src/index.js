@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Pagina from './components/pagina';
+import Page from './components/page'
+
 
 ReactDOM.render(
-    React.createElement(Pagina, null), 
+    React.createElement(Page, null), 
     document.getElementById('root')
-);
+)
